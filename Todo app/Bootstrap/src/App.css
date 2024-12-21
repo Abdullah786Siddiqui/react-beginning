@@ -1,0 +1,12 @@
+body{
+  background-color: whitesmoke;
+}
+.col-6,.col-2 {
+  text-align: left;
+}
+
+
+.input{
+ width: 100%;
+
+}
