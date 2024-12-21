@@ -21,14 +21,14 @@ function App() {
   ];
 
   return (
-    <center>
+     <center>
       <div className={style.calculator}>
         <Titel />
         <Input />
        <Buttons numbers={btnNumber}/>
       </div>
-    </center>
-  );
+      </center>
+  )
 }
 
 export default App;
