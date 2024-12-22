@@ -1,16 +1,41 @@
 import Fooditems from "./Components/Fooditems";
 import Errormsg from "./Components/Errormsg";
 import Style from "./Components/Fooditems.module.css";
+import Container from "./Components/container";
+import Input from "./Components/input";
+import { useState } from "react";
 
 function App() {
-  let foods = ["Liche", "Apple", "Annnanas", "Bnanana", "Appricot"];
+  
+  let [foods, setfoods] = useState(["Apple","Banana","Appricot"]);
 
+  let handleinput = (e) => {
+  
+    
+    if (e.key === "Enter") {
+      let item = e.target.value;
+     
+      
+      let newitems = [...foods, item];
+      setfoods(newitems);
+    }
+  };
   return (
-    <div className="container-fluid">
+    <Container>
       <h1 className={Style["heading"]}>Healthy Food</h1>
+      <Input handleinput={handleinput} />
       <Errormsg fooditems={foods} />
       <Fooditems fooditems={foods} />
-    </div>
+    </Container>
+
+    /* <Container>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima velit
+          architecto quaerat sunt, quis illum molestias minus impedit quas
+          molestiae at vel. Consequatur tenetur, ullam eum est eveniet unde
+          eius.
+        </p>
+      </Container> */
   );
 }
 

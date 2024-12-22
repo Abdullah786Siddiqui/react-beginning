@@ -1,8 +1,8 @@
-function Input(){
+function Input({addtasks}){
 return(
   <div className="row mb-2">
         <div className="col-6">
-          <input type="text" className="input " placeholder="Enter Your Name" />
+          <input type="text" className="input "  onKeyDown={addtasks} placeholder="Enter Your Name" />
         </div>
         <div className="col-4">
           <input type="date"  />

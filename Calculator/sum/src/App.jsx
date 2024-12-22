@@ -1,7 +1,7 @@
 import Titel from "./Components/Titel";
 import Input from "./Components/input";
-import Buttons from "./Components/button"
-import style from "./Components/App.module.css"
+import Buttons from "./Components/button";
+import Calculator from "./Components/calculator";
 
 function App() {
   let btnNumber = [
@@ -21,14 +21,14 @@ function App() {
   ];
 
   return (
-     <center>
-      <div className={style.calculator}>
+    <center>
+      <Calculator>
         <Titel />
         <Input />
-       <Buttons numbers={btnNumber}/>
-      </div>
-      </center>
-  )
+        <Buttons numbers={btnNumber} />
+      </Calculator>
+    </center>
+  );
 }
 
 export default App;

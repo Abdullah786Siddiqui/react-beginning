@@ -1,9 +1,8 @@
 import Item from "./items";
-import Style from "./Fooditems.module.css"; 
 
 const Fooditems = ({ fooditems }) => {
   return (
-    <ul className={Style["unorder"]}>
+    <ul className="list-group">
       {fooditems.map((food) => (
         <Item key={food} fooditems={food} />
       ))}

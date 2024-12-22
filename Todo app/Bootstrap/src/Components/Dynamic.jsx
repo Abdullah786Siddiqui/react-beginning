@@ -3,7 +3,7 @@ function Element({ products,dates }) {
   return (
     <>
       {products.map((product,index) => (
-        <Grid products={product} dates={dates[index]}  />
+        <Grid key={`${product}-${dates}`}  products={product} dates={dates[index]}  />
       ))}
       
     </>
