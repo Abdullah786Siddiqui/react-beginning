@@ -6,20 +6,20 @@ import Input from "./Components/input";
 import { useState } from "react";
 
 function App() {
-  
-  let [foods, setfoods] = useState(["Apple","Banana","Appricot"]);
+  let [foods, setfoods] = useState(["Apple", "Banana", "Appricot","Annanas"]);
 
   let handleinput = (e) => {
-  
+    console.log(e);
     
     if (e.key === "Enter") {
       let item = e.target.value;
-     
-      
       let newitems = [...foods, item];
+      console.log(newitems)
       setfoods(newitems);
     }
   };
+  
+  
   return (
     <Container>
       <h1 className={Style["heading"]}>Healthy Food</h1>

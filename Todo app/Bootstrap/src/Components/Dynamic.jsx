@@ -1,11 +1,10 @@
 import Grid from "./grid";
-function Element({ products,dates }) {
+function Element({ todoitem ,deleteitem}) {
   return (
     <>
-      {products.map((product,index) => (
-        <Grid key={`${product}-${dates}`}  products={product} dates={dates[index]}  />
+      {todoitem.map((todo) => (
+        <Grid key={todo} products={todo} deleteitem={deleteitem} />
       ))}
-      
     </>
   );
 }

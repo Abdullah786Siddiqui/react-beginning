@@ -5,7 +5,8 @@
 .error{
   color: red;
 }
-.button{
-float: right;
+.button1{
+background-color: red !important;
+
 
 }

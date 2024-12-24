@@ -4,37 +4,32 @@ import Element from "./Components/Dynamic";
 import { useState } from "react";
 
 function App() {
-  let products = [
-    "milk",
-    "Sugar",
-    "Appricot",
-    "banana",
-    "Annanas",
-    "Orange",
-    "Carrot",
-  ];
-  let dates = [
-    "2/12/24",
-    "2/12/24",
-    "2/12/24",
-    "2/12/24",
-    "6/12/24",
-    "6/12/24",
-    "6/12/24",
-  ];
+  let [todoitem, settodoitems] = useState([]);
 
-  const [texttoshow, setState] = useState("Abdullah Start typing product");
-
-
-  const addtask = (e) => {
-    setState(e.target.value) 
+  let handletodoitem = (item, date) => {
+    if (!item || !date) {
+      alert("plese Enter the task");
+    } else {
+      let newitem = [...todoitem, { name: item, Date: date }];
+      settodoitems(newitem);
+    }
   };
+  let handleItemDelete = (todoitemName) => {
+    console.log(`Delete item ${todoitemName}`);
+    let newtodoitem = todoitem.filter((item) => item.name !== todoitemName);
+    settodoitems(newtodoitem);
+  };
+
   return (
     <div className="container text-center  ">
       <Titel />
-      <Input addtasks={addtask} />
-      <p>{texttoshow}</p>
-      <Element products={products} dates={dates} />
+      <Input newitemadd={handletodoitem} />
+      {todoitem.length === 0 && (
+        <p className="fw-bold fs-4 text-success text">
+          WELCOME ALL YOUR TASK HAVE DONE PLESE ADD MORE TASK...
+        </p>
+      )}
+      <Element todoitem={todoitem} deleteitem={handleItemDelete} />
     </div>
   );
 }
