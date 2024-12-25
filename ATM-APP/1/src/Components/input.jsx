@@ -1,11 +1,22 @@
-let Input = () => {
+
+import style from "./input.module.css";
+
+let Input = ({ handleInputChange ,handleBtnCHange ,inputstate }) => {
+ 
+
   return (
-    <div className="container">
-      <h1>REACT ATM APP</h1>
-      <label htmlFor="passwordKey">
-        <input type="number" id="passwordKey" />
+    <>
+      <h3>REACT ATM APP</h3>
+      <label className={`fw-bolder pe-2 input ${style.input}`}>
+        Enter Your Key
       </label>
-    </div>
+      <input type="text" value={inputstate} onChange={handleInputChange} />
+      <div className="button-cont">
+        <button className="btn btn-success mt-2" onClick={handleBtnCHange}>
+          Enter
+        </button>
+      </div>
+    </>
   );
 };
 export default Input;
