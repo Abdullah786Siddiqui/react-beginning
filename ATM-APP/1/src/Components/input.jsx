@@ -1,9 +1,11 @@
 
+import { useContext } from "react";
+import {ContextItem} from "../Store/Context.jsx"
 import style from "./input.module.css";
 
-let Input = ({ handleInputChange ,handleBtnCHange ,inputstate }) => {
+let Input = ({ inputstate }) => {
  
-
+ let {handleInputChange,handleBtnCHange} = useContext(ContextItem)
   return (
     <>
       <h3>REACT ATM APP</h3>

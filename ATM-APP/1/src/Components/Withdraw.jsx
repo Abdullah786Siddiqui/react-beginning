@@ -1,6 +1,9 @@
-let Withdraw = ({handleBtnCHange,setResult ,setUserInput,userinput}) => {
+import { useContext } from "react";
+import { ContextItem } from "../Store/Context";
 
+let Withdraw = () => {
 
+let {handleBtnCHange,userinput,setResult,setUserInput}= useContext(ContextItem)
  
      
   let handleWithdraw =()=>{

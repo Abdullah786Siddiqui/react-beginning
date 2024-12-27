@@ -1,4 +1,8 @@
-let Deposite = ({handleBtnCHange ,userinput,setResult,setUserInput}) => {
+import { useContext } from "react";
+import { ContextItem } from "../Store/Context";
+
+let Deposite = () => {
+  let {handleBtnCHange,userinput,setResult,setUserInput} =useContext(ContextItem)
   let handleDepositeBtn=()=>{
     if(!handleBtnCHange()) return
       let amount = parseFloat(prompt(`Plese Enter Your Deposite Amount`));

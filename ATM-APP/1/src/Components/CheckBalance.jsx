@@ -1,5 +1,8 @@
-let CheckBalance = ({userinput ,handleBtnCHange,setResult}) => {
+import { useContext } from "react";
+import { ContextItem } from "../Store/Context";
 
+let CheckBalance = () => {
+ let {userinput,handleBtnCHange} =useContext(ContextItem)
  
   
   let HandleCheckBtn = ()=>{

@@ -1,10 +1,12 @@
+import { useContext } from "react";
 import style from "./button.module.css"
-let Buttons = ({numbers,onbtnclick}) => {
-
+import { ContextItem } from "../Store/Context";
+let Buttons = () => {
+let {btnNumber,onbtnclick} = useContext(ContextItem)
   
   return(
   <div className={style["button-cont"]}>
-    {numbers.map((number) => (
+    {btnNumber.map((number) => (
       <button className={style["button"]} onClick={()=>onbtnclick(number)}>{number}</button>
     ))}
   </div>

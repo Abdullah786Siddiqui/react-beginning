@@ -1,10 +1,15 @@
 import { RiAddLargeFill } from "react-icons/ri";
+import { useContext } from "react";
+import { TodoItemContext } from "../Store/TodoitemContext";
+
 
 import { useState } from "react";
 
-function Input({ newitemadd }) {
+function Input() {
   let [todoitem, settodoitem] = useState("");
   let [duedate, setduedate] = useState("");
+  let {AddNewItem} = useContext(TodoItemContext);
+  
 
   let handlietodoitem = (e) => {
     settodoitem(e.target.value);
@@ -14,7 +19,7 @@ function Input({ newitemadd }) {
   };
 
   let handleaddbtn =()=>{
-    newitemadd(todoitem,duedate)
+    AddNewItem(todoitem,duedate)
     settodoitem("")
     setduedate("")
 

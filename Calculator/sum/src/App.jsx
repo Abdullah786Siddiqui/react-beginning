@@ -3,6 +3,7 @@ import Input from "./Components/input";
 import Buttons from "./Components/button";
 import Calculator from "./Components/calculator";
 import { useState } from "react";
+import { ContextItem } from "./Store/Context";
 
 function App() {
   let btnNumber = [
@@ -39,13 +40,21 @@ function App() {
   };
 
   return (
-    <center>
-      <Calculator>
-        <Titel />
-        <Input calVal={calVal} />
-        <Buttons numbers={btnNumber} onbtnclick={onbtnclick} />
-      </Calculator>
-    </center>
+    <ContextItem.Provider
+      value={{
+        calVal,
+        btnNumber,
+        onbtnclick,
+      }}
+    >
+      <center>
+        <Calculator>
+          <Titel />
+          <Input />
+          <Buttons />
+        </Calculator>
+      </center>
+    </ContextItem.Provider>
   );
 }
 
